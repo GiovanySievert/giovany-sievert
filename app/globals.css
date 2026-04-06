@@ -10,6 +10,47 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-syntax-comment:  #6a9955;
+  --color-syntax-keyword:  #c586c0;
+  --color-syntax-type:     #569cd6;
+  --color-syntax-variable: #9cdcfe;
+  --color-syntax-string:   #ce9178;
+  --color-syntax-function: #dcdcaa;
+  --color-syntax-teal:     #4ec9b0;
+  --color-syntax-number:   #b5cea8;
+  --color-syntax-plain:    #d4d4d4;
+
+  --color-editor-bg:     #171727;
+  --color-editor-gutter: #858585;
+  --color-editor-cursor: #aeafad;
+
+  --color-sidebar-bg:     #1d1d2e;
+  --color-sidebar-hover:  #24243a;
+  --color-sidebar-active: #2a2a3d;
+  --color-sidebar-text:   #bbbec4;
+  --color-sidebar-file:   #cccccc;
+  --color-sidebar-folder: #e8c07c;
+  --color-sidebar-resize: #4d7ef7;
+
+  --color-activity-bg:   #2b2b46;
+  --color-activity-icon: #7e8cb5;
+
+  --color-tab-border:   #252526;
+  --color-tab-muted:    #8b8b8b;
+  --color-tab-hover:    #2a2a2a;
+  --color-tab-dim:      #cccccc;
+  --color-tab-sep:      #4e4e4e;
+  --color-tab-modified: #73c991;
+  --color-tab-close:    #5a5a5a;
+
+  --color-statusbar-bg: #007acc;
+}
+
+@theme {
+  --text-ui-xs: 11px;
+  --text-ui-sm: 12px;
+  --text-ui-md: 13px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +63,67 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* VSCode-like scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f3f3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+  border-radius: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: #1e1e1e;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #424242;
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555555;
+    border-radius: 0;
+  }
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f3f3f3;
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    scrollbar-color: #424242 #1e1e1e;
+  }
+}
+
+/* Blinking cursor */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: cursor-blink 1s step-end infinite;
+}
+
+/* Indentation guides */
+.indent-guide {
+  border-left: 1px solid rgba(255, 255, 255, 0.07);
 }
