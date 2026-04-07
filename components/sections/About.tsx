@@ -1,5 +1,8 @@
+import { Fragment } from 'react'
 import { Cursor } from '@/components/ui/Cursor'
-import { C, K, B, V, S, N } from '@/components/ui/syntax'
+import { Lines, Line } from '@/components/ui/Line'
+import { C, B, V, S, N } from '@/components/ui/syntax'
+import { splitLines } from '@/lib/utils'
 
 const experience = [
   {
@@ -32,186 +35,167 @@ const education = [
 
 export function About() {
   return (
-    <div id="about" className="min-h-full bg-editor-bg font-mono text-sm leading-6 p-10 text-syntax-plain">
-      <p className="text-syntax-comment text-base font-bold tracking-widest mb-6">// ABOUT ME</p>
-
-      <div className="mb-8 space-y-0.5">
-        <p>
+    <div id="about" className="bg-editor-bg font-mono text-sm text-syntax-plain py-2">
+      <Lines>
+        <Line>
+          <C>{'// ABOUT ME'}</C>
+        </Line>
+        <Line />
+        <Line>
           <B>const </B>
           <V>developer </V>
           <span>= {'{'}</span>
-        </p>
-        <div className="pl-8 space-y-0.5">
-          <p>
-            <V>name</V>
-            <span>: </span>
-            <S>&apos;Giovany Sievert&apos;</S>
-            <span>,</span>
-          </p>
-          <p>
-            <V>role</V>
-            <span>: </span>
-            <S>&apos;Senior Software Engineer&apos;</S>
-            <span>,</span>
-          </p>
-          <p>
-            <V>location</V>
-            <span>: </span>
-            <S>&apos;Curitiba, Brazil&apos;</S>
-            <span>,</span>
-          </p>
-          <p>
-            <V>experience</V>
-            <span>: </span>
-            <S>&apos;6+ years&apos;</S>
-            <span>,</span>
-          </p>
-          <p>
-            <V>focus</V>
-            <span>: </span>
-            <S>&apos;Frontend — React &amp; React Native&apos;</S>
-            <span>,</span>
-          </p>
-          <p>
-            <V>languages</V>
-            <span>: [</span>
-            <S>&apos;English&apos;</S>
-            <span>, </span>
-            <S>&apos;Portuguese&apos;</S>
-            <span>],</span>
-          </p>
-        </div>
-        <p>{'};'}</p>
-      </div>
-
-      <div className="mb-8 border-t border-dashed border-zinc-700" />
-
-      <div className="mb-8 space-y-0.5">
-        <p>
+        </Line>
+        <Line indent={2}>
+          <V>name</V>
+          <span>: </span>
+          <S>&apos;Giovany Sievert&apos;</S>
+          <span>,</span>
+        </Line>
+        <Line indent={2}>
+          <V>role</V>
+          <span>: </span>
+          <S>&apos;Senior Software Engineer&apos;</S>
+          <span>,</span>
+        </Line>
+        <Line indent={2}>
+          <V>location</V>
+          <span>: </span>
+          <S>&apos;Curitiba, Brazil&apos;</S>
+          <span>,</span>
+        </Line>
+        <Line indent={2}>
+          <V>experience</V>
+          <span>: </span>
+          <S>&apos;6+ years&apos;</S>
+          <span>,</span>
+        </Line>
+        <Line indent={2}>
+          <V>focus</V>
+          <span>: </span>
+          <S>&apos;Frontend — React &amp; React Native&apos;</S>
+          <span>,</span>
+        </Line>
+        <Line indent={2}>
+          <V>languages</V>
+          <span>: [</span>
+          <S>&apos;English&apos;</S>
+          <span>, </span>
+          <S>&apos;Portuguese&apos;</S>
+          <span>],</span>
+        </Line>
+        <Line>{'};'}</Line>
+        <Line />
+        <Line>
           <C>{'/**'}</C>
-        </p>
-        <p className="pl-4">
+        </Line>
+        <Line indent={1}>
           <C>* Full Stack Developer with 6+ years of experience, focused on</C>
-        </p>
-        <p className="pl-4">
+        </Line>
+        <Line indent={1}>
           <C>* frontend development with React and React Native. Currently</C>
-        </p>
-        <p className="pl-4">
+        </Line>
+        <Line indent={1}>
           <C>* Tech Lead at Medprev, driving technical decisions and mentoring</C>
-        </p>
-        <p className="pl-4">
+        </Line>
+        <Line indent={1}>
           <C>* developers across mobile and web products.</C>
-        </p>
-        <p className="pl-4">
+        </Line>
+        <Line indent={1}>
           <C>*</C>
-        </p>
-        <p className="pl-4">
+        </Line>
+        <Line indent={1}>
           <C>* Strong communicator — keeping designers, QA, and infra aligned</C>
-        </p>
-        <p className="pl-4">
+        </Line>
+        <Line indent={1}>
           <C>* is something I genuinely enjoy and consider a core strength.</C>
-        </p>
-        <p>
+        </Line>
+        <Line>
           <C>{' */'}</C>
-        </p>
-      </div>
-
-      <div className="mb-8 border-t border-dashed border-zinc-700" />
-
-      <div className="mb-8 space-y-0.5">
-        <p>
+        </Line>
+        <Line />
+        <Line>
           <B>const </B>
           <V>experience</V>
           <span>: </span>
           <B>Experience</B>
           <span>[] = [</span>
-        </p>
-        <div className="pl-8 space-y-3">
-          {experience.map((item) => (
-            <div key={item.company + item.role} className="space-y-0.5">
-              <p>{'{'}</p>
-              <div className="pl-8 space-y-0.5">
-                <p>
-                  <V>company</V>
-                  <span>: </span>
-                  <S>&apos;{item.company}&apos;</S>
-                  <span>,</span>
-                </p>
-                <p>
-                  <V>role</V>
-                  <span>: </span>
-                  <S>&apos;{item.role}&apos;</S>
-                  <span>,</span>
-                </p>
-                <p>
-                  <V>period</V>
-                  <span>: </span>
-                  <S>&apos;{item.period}&apos;</S>
-                  <span>,</span>
-                </p>
-                <p>
-                  <V>about</V>
-                  <span>: </span>
-                  <S>&apos;{item.about}&apos;</S>
-                  <span>,</span>
-                </p>
-              </div>
-              <p>
-                {'}'}
-                <span className="text-editor-gutter">,</span>
-              </p>
-            </div>
-          ))}
-        </div>
-        <p>];</p>
-      </div>
-
-      <div className="mb-8 border-t border-dashed border-zinc-700" />
-
-      <div className="space-y-0.5">
-        <p>
+        </Line>
+        {experience.map((item) => (
+          <Fragment key={item.company + item.role}>
+            <Line indent={2}>{'{'}</Line>
+            <Line indent={4}>
+              <V>company</V>
+              <span>: </span>
+              <S>&apos;{item.company}&apos;</S>
+              <span>,</span>
+            </Line>
+            <Line indent={4}>
+              <V>role</V>
+              <span>: </span>
+              <S>&apos;{item.role}&apos;</S>
+              <span>,</span>
+            </Line>
+            <Line indent={4}>
+              <V>period</V>
+              <span>: </span>
+              <S>&apos;{item.period}&apos;</S>
+              <span>,</span>
+            </Line>
+            {splitLines(item.about).map((line, i, arr) => (
+              <Line key={i} indent={4}>
+                {i === 0 && <><V>about</V><span>: </span><S>&apos;</S></>}
+                <S>{line}</S>
+                {i === arr.length - 1 && <><S>&apos;</S><span>,</span></>}
+              </Line>
+            ))}
+            <Line indent={2}>
+              {'}'}
+              <span className="text-editor-gutter">,</span>
+            </Line>
+          </Fragment>
+        ))}
+        <Line>];</Line>
+        <Line />
+        <Line>
           <B>const </B>
           <V>education</V>
           <span>: </span>
           <B>Education</B>
           <span>[] = [</span>
-        </p>
-        <div className="pl-8 space-y-3">
-          {education.map((item) => (
-            <div key={item.institution} className="space-y-0.5">
-              <p>{'{'}</p>
-              <div className="pl-8 space-y-0.5">
-                <p>
-                  <V>institution</V>
-                  <span>: </span>
-                  <S>&apos;{item.institution}&apos;</S>
-                  <span>,</span>
-                </p>
-                <p>
-                  <V>degree</V>
-                  <span>: </span>
-                  <S>&apos;{item.degree}&apos;</S>
-                  <span>,</span>
-                </p>
-                <p>
-                  <V>period</V>
-                  <span>: </span>
-                  <N>{item.period}</N>
-                  <span>,</span>
-                </p>
-              </div>
-              <p>
-                {'}'}
-                <span className="text-editor-gutter">,</span>
-              </p>
-            </div>
-          ))}
-        </div>
-        <p>
+        </Line>
+        {education.map((item) => (
+          <Fragment key={item.institution}>
+            <Line indent={2}>{'{'}</Line>
+            <Line indent={4}>
+              <V>institution</V>
+              <span>: </span>
+              <S>&apos;{item.institution}&apos;</S>
+              <span>,</span>
+            </Line>
+            <Line indent={4}>
+              <V>degree</V>
+              <span>: </span>
+              <S>&apos;{item.degree}&apos;</S>
+              <span>,</span>
+            </Line>
+            <Line indent={4}>
+              <V>period</V>
+              <span>: </span>
+              <N>{item.period}</N>
+              <span>,</span>
+            </Line>
+            <Line indent={2}>
+              {'}'}
+              <span className="text-editor-gutter">,</span>
+            </Line>
+          </Fragment>
+        ))}
+        <Line>
           ];
           <Cursor />
-        </p>
-      </div>
+        </Line>
+      </Lines>
     </div>
   )
 }

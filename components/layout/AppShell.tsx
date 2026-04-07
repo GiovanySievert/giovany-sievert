@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useEffect, useRef, type ComponentType } from 'react'
+import { useState, useCallback, type ComponentType } from 'react'
 import { ContactSideBar } from './ContactSideBar'
 import { InfoSideBar, type TreeNode } from './InfoSideBar'
 import { Header } from './Header'
@@ -42,7 +42,7 @@ const TREE: TreeNode[] = [
 ]
 
 export function AppShell() {
-  const [openTabs, setOpenTabs] = useState<SidebarItem[]>([ITEMS[0]])
+  const [openTabs, setOpenTabs] = useState<SidebarItem[]>(ITEMS)
   const [activeTabId, setActiveTabId] = useState<string | null>(ITEMS[0].id)
 
   const openTab = useCallback((id: string) => {
@@ -66,60 +66,25 @@ export function AppShell() {
 
   const activeItem = ITEMS.find((i) => i.id === activeTabId)
 
-  const contentRef = useRef<HTMLDivElement>(null)
-  const mainRef = useRef<HTMLElement>(null)
-  const [lineCount, setLineCount] = useState(40)
-
-  useEffect(() => {
-    const main = mainRef.current
-    if (!main) return
-    const observer = new ResizeObserver(() => {
-      setLineCount(Math.ceil(main.clientHeight / 22))
-    })
-    observer.observe(main)
-    return () => observer.disconnect()
-  }, [])
-
   return (
     <div className="flex h-screen overflow-hidden">
       <div className="flex shrink-0">
         <ContactSideBar />
-        <InfoSideBar tree={TREE} activeTabId={activeTabId} onItemClick={openTab} />
+        <div className="hidden md:block">
+          <InfoSideBar tree={TREE} activeTabId={activeTabId} onItemClick={openTab} />
+        </div>
       </div>
 
       <div className="flex flex-1 flex-col overflow-hidden">
         <Header tabs={openTabs} activeTabId={activeTabId} onTabClick={setActiveTabId} onTabClose={closeTab} />
-        <main ref={mainRef} className="flex-1 overflow-y-auto bg-editor-bg">
-          <div className="flex min-h-full">
-            <div
-              aria-hidden
-              className="shrink-0 select-none bg-editor-bg font-mono text-ui-md leading-[22px] text-editor-gutter"
-              style={{ minWidth: '3rem', paddingRight: '0.75rem', textAlign: 'right' }}
-            >
-              {Array.from({ length: lineCount }, (_, i) => (
-                <div key={i}>{i + 1}</div>
-              ))}
+        <main className="flex-1 overflow-y-auto bg-editor-bg">
+          {activeItem ? (
+            <activeItem.Component />
+          ) : (
+            <div className="flex min-h-64 items-center justify-center">
+              <p className="text-sm text-zinc-600">Select a file to open</p>
             </div>
-
-            <div className="relative flex-1">
-              <div
-                ref={contentRef}
-                style={{
-                  backgroundImage:
-                    'repeating-linear-gradient(to right, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 32px)',
-                  backgroundPositionX: '40px'
-                }}
-              >
-                {activeItem ? (
-                  <activeItem.Component />
-                ) : (
-                  <div className="flex min-h-64 items-center justify-center">
-                    <p className="text-sm text-zinc-600">Select a file to open</p>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
+          )}
         </main>
 
         <StatusBar activeTab={activeItem?.label ?? null} />

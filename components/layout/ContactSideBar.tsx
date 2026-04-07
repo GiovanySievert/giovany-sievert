@@ -1,5 +1,4 @@
-import { FaPhone, FaEnvelope, FaGithub, FaLinkedinIn } from 'react-icons/fa'
-import { SiStackoverflow, SiUpwork } from 'react-icons/si'
+import { FaEnvelope, FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import type { IconType } from 'react-icons'
 
 const links: { icon: IconType; href: string; label: string }[] = [
@@ -16,7 +15,6 @@ export function ContactSideBar() {
           key={label}
           href={href}
           target="_blank"
-          rel="noopener noreferrer"
           aria-label={label}
           title={label}
           className="text-activity-icon transition-colors hover:text-white"

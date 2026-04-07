@@ -4,6 +4,7 @@ import { useState, useRef, useCallback } from 'react'
 import { FaReact, FaFolder, FaFolderOpen } from 'react-icons/fa'
 import { IoChevronDown, IoChevronForward } from 'react-icons/io5'
 import { HiDotsHorizontal } from 'react-icons/hi'
+import { VscRootFolder } from 'react-icons/vsc'
 
 export interface FileNode {
   type: 'file'
@@ -74,7 +75,7 @@ export function InfoSideBar({ tree, activeTabId, onItemClick }: Props) {
 
       <button
         onClick={() => setIsRootOpen((o) => !o)}
-        className="flex w-full items-center gap-0.5 px-2 py-0.5 text-ui-xs font-bold uppercase tracking-widest text-sidebar-text hover:bg-sidebar-hover"
+        className="flex w-full items-center gap-1 px-2 py-0.5 text-ui-xs font-bold uppercase tracking-widest text-sidebar-text hover:bg-sidebar-hover"
       >
         {isRootOpen ? (
           <IoChevronDown size={12} className="shrink-0" />
@@ -93,7 +94,7 @@ export function InfoSideBar({ tree, activeTabId, onItemClick }: Props) {
                 <li key={node.id}>
                   <button
                     onClick={() => onItemClick(node.id)}
-                    className={`flex w-full items-center gap-1.5 py-0.75 pl-5.5 pr-2 text-left text-ui-md transition-colors ${
+                    className={`flex w-full cursor-pointer items-center gap-1.5 py-0.5 pl-5.5 pr-2 text-left text-ui-md transition-colors ${
                       isActive ? 'bg-sidebar-active text-white' : 'text-sidebar-file hover:bg-sidebar-hover'
                     }`}
                   >
@@ -110,7 +111,7 @@ export function InfoSideBar({ tree, activeTabId, onItemClick }: Props) {
               <li key={node.label}>
                 <button
                   onClick={() => toggleFolder(node.label)}
-                  className="flex w-full items-center gap-1 py-0.75 pl-3 pr-2 text-left text-ui-md text-sidebar-file transition-colors hover:bg-sidebar-hover"
+                  className="flex w-full cursor-pointer items-center gap-1 py-0.5 pl-3 pr-2 text-left text-ui-md text-sidebar-file transition-colors hover:bg-sidebar-hover"
                 >
                   {isOpen ? (
                     <IoChevronDown size={12} className="shrink-0 text-sidebar-text" />
@@ -133,7 +134,7 @@ export function InfoSideBar({ tree, activeTabId, onItemClick }: Props) {
                         <li key={child.id}>
                           <button
                             onClick={() => onItemClick(child.id)}
-                            className={`flex w-full items-center gap-1.5 py-0.75 pl-9.5 pr-2 text-left text-ui-md transition-colors ${
+                            className={`flex w-full cursor-pointer items-center gap-1.5 py-0.5 pl-9.5 pr-2 text-left text-ui-md transition-colors ${
                               isActive ? 'bg-sidebar-active text-white' : 'text-sidebar-file hover:bg-sidebar-hover'
                             }`}
                           >

@@ -1,5 +1,8 @@
 'use client'
 
+import { FaReact } from 'react-icons/fa'
+import { VscSymbolMethod } from 'react-icons/vsc'
+
 interface Tab {
   id: string
   label: string
@@ -16,7 +19,7 @@ interface Props {
 export function Header({ tabs, activeTabId, onTabClick, onTabClose }: Props) {
   const activeTab = tabs.find((t) => t.id === activeTabId)
   const componentName = activeTab?.label.replace(/\.tsx?$/, '')
-  const pathSegments = activeTab?.path?.split('/') ?? []
+  const pathSegments = activeTab?.path?.split('/').filter(Boolean) ?? []
 
   return (
     <header className="sticky top-0 z-50">
@@ -41,11 +44,9 @@ export function Header({ tabs, activeTabId, onTabClick, onTabClose }: Props) {
                 {isActive && <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-syntax-teal" />}
                 {isActive && <span className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-tab-modified" />}
 
-                <span className="shrink-0 text-ui-xs text-syntax-teal" aria-hidden>⚛</span>
+                <FaReact size={13} className="shrink-0 text-syntax-teal" aria-hidden />
 
-                <span className={`whitespace-nowrap ${isActive ? 'text-syntax-teal' : 'text-white'}`}>
-                  {tab.label}
-                </span>
+                <span className={`whitespace-nowrap ${isActive ? 'text-syntax-teal' : 'text-white'}`}>{tab.label}</span>
 
                 <span className="text-ui-xs text-tab-modified">U</span>
 
@@ -54,7 +55,7 @@ export function Header({ tabs, activeTabId, onTabClick, onTabClose }: Props) {
                     e.stopPropagation()
                     onTabClose(tab.id)
                   }}
-                  className={`flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded text-ui-xs text-tab-muted transition-all hover:bg-tab-close hover:text-white ${
+                  className={`flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded text-sm text-tab-muted transition-all hover:bg-tab-close hover:text-white ${
                     isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                   }`}
                   aria-label={`Close ${tab.label}`}
@@ -78,14 +79,14 @@ export function Header({ tabs, activeTabId, onTabClick, onTabClose }: Props) {
 
           <span className="flex items-center">
             {pathSegments.length > 0 && <span className="mx-1 text-tab-sep">›</span>}
-            <span className="mr-0.5 text-syntax-teal">⚛</span>
+            <FaReact size={13} className="mr-2 text-syntax-teal" aria-hidden />
             <span className="text-tab-dim">{activeTab.label}</span>
           </span>
 
           {componentName && (
             <span className="flex items-center">
               <span className="mx-1 text-tab-sep">›</span>
-              <span className="mr-1 text-md text-syntax-keyword">⊘</span>
+              <VscSymbolMethod size={14} className="mr-1 text-syntax-keyword" aria-hidden />
               <span className="text-tab-dim">{componentName}</span>
             </span>
           )}

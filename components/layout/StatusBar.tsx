@@ -22,9 +22,9 @@ export function StatusBar({ activeTab }: StatusBarProps) {
       </div>
 
       <div className="flex items-center gap-0.5">
-        {lang && <span className="hover:bg-white/10 px-2 py-0.5 cursor-pointer">{lang}</span>}
-        <span className="hover:bg-white/10 px-2 py-0.5 cursor-pointer">Ln 1, Col 1</span>
-        <span className="hover:bg-white/10 px-2 py-0.5 cursor-pointer">Spaces: 2</span>
+        {lang && <span className="hidden sm:inline hover:bg-white/10 px-2 py-0.5 cursor-pointer">{lang}</span>}
+        <span className="hidden sm:inline hover:bg-white/10 px-2 py-0.5 cursor-pointer">Ln 1, Col 1</span>
+        <span className="hidden md:inline hover:bg-white/10 px-2 py-0.5 cursor-pointer">Spaces: 2</span>
         <span className="hover:bg-white/10 px-2 py-0.5 cursor-pointer">UTF-8</span>
         <span className="hover:bg-white/10 px-2 py-0.5 cursor-pointer flex items-center gap-1">
           <VscBell className="text-ui-sm" />
