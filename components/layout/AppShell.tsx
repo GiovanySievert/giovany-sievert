@@ -9,6 +9,7 @@ import { Hero } from '@/components/sections/Hero'
 import { About } from '@/components/sections/About'
 import { Projects } from '@/components/sections/Projects'
 import { Skills } from '@/components/sections/Skills'
+import { Personal } from '@/components/sections/Personal'
 
 interface SidebarItem {
   id: string
@@ -21,7 +22,8 @@ const ITEMS: SidebarItem[] = [
   { id: 'hero', label: 'Hero.tsx', path: '', Component: Hero },
   { id: 'about', label: 'About.tsx', path: 'components', Component: About },
   { id: 'skills', label: 'Skills.tsx', path: 'components', Component: Skills },
-  { id: 'projects', label: 'Projects.tsx', path: 'side-projects', Component: Projects }
+  { id: 'projects', label: 'Projects.tsx', path: 'side-projects', Component: Projects },
+  { id: 'personal', label: 'Personal.tsx', path: 'me', Component: Personal }
 ]
 
 const TREE: TreeNode[] = [
@@ -38,6 +40,11 @@ const TREE: TreeNode[] = [
     type: 'folder',
     label: 'side-projects',
     children: [{ type: 'file', id: 'projects', label: 'Projects.tsx' }]
+  },
+  {
+    type: 'folder',
+    label: 'me',
+    children: [{ type: 'file', id: 'personal', label: 'Personal.tsx' }]
   }
 ]
 

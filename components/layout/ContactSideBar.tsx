@@ -14,7 +14,8 @@ export function ContactSideBar() {
         <a
           key={label}
           href={href}
-          target="_blank"
+          target={href.startsWith('mailto') ? undefined : '_blank'}
+          rel="noopener noreferrer"
           aria-label={label}
           title={label}
           className="text-activity-icon transition-colors hover:text-white"

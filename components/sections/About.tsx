@@ -84,6 +84,12 @@ export function About() {
           <S>&apos;Portuguese&apos;</S>
           <span>],</span>
         </Line>
+        <Line indent={2}>
+          <V>email</V>
+          <span>: </span>
+          <S><a href="mailto:giovanysievert@gmail.com" className="hover:underline">&apos;giovanysievert@gmail.com&apos;</a></S>
+          <span>,</span>
+        </Line>
         <Line>{'};'}</Line>
         <Line />
         <Line>
