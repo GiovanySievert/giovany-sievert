@@ -70,7 +70,7 @@ export function Projects() {
           </Fragment>
         ))}
         <Line />
-        <Line>];<Cursor /></Line>
+        <Line cursorLine>];<Cursor /></Line>
       </Lines>
     </div>
   )

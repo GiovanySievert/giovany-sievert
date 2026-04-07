@@ -43,7 +43,7 @@ export function Skills() {
           )
         })}
         <Line />
-        <Line>{'};'}<Cursor /></Line>
+        <Line cursorLine>{'};'}<Cursor /></Line>
       </Lines>
     </div>
   )

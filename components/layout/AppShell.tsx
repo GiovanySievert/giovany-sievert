@@ -77,7 +77,7 @@ export function AppShell() {
 
       <div className="flex flex-1 flex-col overflow-hidden">
         <Header tabs={openTabs} activeTabId={activeTabId} onTabClick={setActiveTabId} onTabClose={closeTab} />
-        <main className="flex-1 overflow-y-auto bg-editor-bg">
+        <main className="editor-scroll flex-1 overflow-y-auto bg-editor-bg">
           {activeItem ? (
             <activeItem.Component />
           ) : (

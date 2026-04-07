@@ -103,7 +103,7 @@ export function Hero() {
           </Line>
         ))}
         <Line indent={2}>)</Line>
-        <Line>
+        <Line cursorLine>
           {'}'}
           <Cursor />
         </Line>

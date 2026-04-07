@@ -86,7 +86,7 @@ export function Header({ tabs, activeTabId, onTabClick, onTabClose }: Props) {
           {componentName && (
             <span className="flex items-center">
               <span className="mx-1 text-tab-sep">›</span>
-              <VscSymbolMethod size={14} className="mr-1 text-syntax-keyword" aria-hidden />
+              <VscSymbolMethod size={14} className="mr-1 text-syntax-function" aria-hidden />
               <span className="text-tab-dim">{componentName}</span>
             </span>
           )}

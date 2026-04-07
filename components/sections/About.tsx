@@ -191,7 +191,7 @@ export function About() {
             </Line>
           </Fragment>
         ))}
-        <Line>
+        <Line cursorLine>
           ];
           <Cursor />
         </Line>
