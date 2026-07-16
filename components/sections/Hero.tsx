@@ -36,7 +36,7 @@ export function Hero() {
             {')'} =&gt; {'{ '}
           </span>
           <K>return </K>
-          <S>&apos;Tech Lead at Medprev | Senior Software Engineer&apos;</S>
+          <S>&apos;Senior Full-Stack Developer at Medprev&apos;</S>
           <span>{' };'}</span>
         </Line>
         <Line>
@@ -63,11 +63,11 @@ export function Hero() {
         <Line indent={4}>
           <C>{'{/* ABOUT */}'}</C>
         </Line>
-        {splitLines('Full Stack Developer with 6+ years of experience, focused on frontend with React and React Native. Currently Tech Lead at Medprev, leading the mobile app team and driving technical decisions.').map((line, i) => (
+        {splitLines('Senior Full-Stack Developer with 6+ years of experience building web and mobile products with React Native, React, Node.js, TypeScript, and AWS. Hands-on individual contributor shipping iOS and Android features used by 50k+ active users and supporting 1M+ daily requests.').map((line, i) => (
           <Line key={`about1-${i}`} indent={4}>{line}</Line>
         ))}
         <Line />
-        {splitLines('Strong teamwork skills — I enjoy keeping everyone aligned across designers, QA, and infrastructure teams. Experienced with TypeScript, Node.js, NestJS, Vue, Bun, Elasticsearch, and Jest.').map((line, i) => (
+        {splitLines('Focused on scalable applications, performance, and reliability — with CI/CD, automated testing, Domain-Driven Design, and Hexagonal Architecture. Experienced with TypeScript, Node.js, NestJS, Vue, Bun, Elasticsearch, and Jest.').map((line, i) => (
           <Line key={`about2-${i}`} indent={4}>{line}</Line>
         ))}
         <Line />

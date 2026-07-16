@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Giovany Sievert | Full Stack Developer",
+  title: "Giovany Sievert | Senior Full-Stack Developer",
   description:
-    "Portfolio of Giovany Sievert — Full Stack Developer specialized in Next.js, TypeScript, and Node.js.",
+    "Portfolio of Giovany Sievert — Senior Full-Stack Developer with 6+ years building web and mobile products with React Native, React, Node.js, TypeScript, and AWS.",
 };
 
 export default function RootLayout({

@@ -7,30 +7,23 @@ import { splitLines } from '@/lib/utils'
 const experience = [
   {
     company: "Medprev",
-    role: "Tech Lead",
-    period: "2025 - Present",
+    role: "Senior Full-Stack Developer",
+    period: "2022 - Present",
     about:
-      "Main developer of the React Native app and responsible for a web project, while leading the mobile engineering team. Owns architecture decisions, defines standards, mentors developers, and aligns cross-functional teams — Product, Design, QA, and Infra — to deliver reliable releases at scale.",
-  },
-  {
-    company: "Medprev",
-    role: "FullStack Developer",
-    period: "2022 - 2025",
-    about:
-      "Developed and maintained features across the React Native mobile app and web platform (Vue.js). Worked on REST API integrations, performance improvements, and internal tooling. Collaborated closely with QA and Product to ship consistent, high-quality releases across multiple company products.",
+      "Core developer of the React Native app (TypeScript) used by 50k+ active users and serving 1M+ requests per day. Shipped iOS and Android features including authentication, favorites, notifications, and location-based experiences, and raised the app store rating from 2.3 to 4.9 through bug fixing, performance refactors, and UX work. Built backend services with NestJS and Elasticsearch powering 5k+ appointments booked monthly, backed by AWS (CloudWatch, RDS, S3), Azure DevOps pipelines, and automated tests with Playwright and Jest.",
   },
   {
     company: "Cargon",
     role: "Full Stack Developer",
-    period: "2019 - 2021",
+    period: "2020 - 2022",
     about:
-      "Built and maintained the core platform of a logistics startup connecting truckers, freight companies, and shippers. Worked across the full stack using React, React Native, Node.js (AdonisJS), and SQL Server, following GitFlow and Scrum within an Azure DevOps workflow.",
+      "Built and maintained the core platform of a freight marketplace connecting shippers and truck drivers across Brazil. Worked across the full stack with React, React Native, and Node.js (AdonisJS), building APIs with authentication, business rules, and integrations with internal logistics services, plus Jest tests covering critical flows like load matching, driver assignment, and delivery tracking.",
   },
 ]
 
 const education = [
-  { institution: 'PUC Paraná', degree: 'Computer Systems Analysis', period: '2018 - 2020' },
-  { institution: 'Alura', degree: 'Front-end Engineer', period: '2018 - 2019' }
+  { institution: 'PUC-PR', degree: 'Systems Analysis and Development', period: '2020 - 2021' },
+  { institution: 'Rocketseat', degree: 'Full-Stack Web & Mobile Bootcamp', period: '2019 - 2020' }
 ]
 
 export function About() {
@@ -55,13 +48,13 @@ export function About() {
         <Line indent={2}>
           <V>role</V>
           <span>: </span>
-          <S>&apos;Senior Software Engineer&apos;</S>
+          <S>&apos;Senior Full-Stack Developer&apos;</S>
           <span>,</span>
         </Line>
         <Line indent={2}>
           <V>location</V>
           <span>: </span>
-          <S>&apos;Curitiba, Brazil&apos;</S>
+          <S>&apos;Curitiba, PR, Brazil&apos;</S>
           <span>,</span>
         </Line>
         <Line indent={2}>
@@ -73,15 +66,17 @@ export function About() {
         <Line indent={2}>
           <V>focus</V>
           <span>: </span>
-          <S>&apos;Frontend — React &amp; React Native&apos;</S>
+          <S>&apos;Web &amp; mobile — React, React Native, Node.js&apos;</S>
           <span>,</span>
         </Line>
         <Line indent={2}>
           <V>languages</V>
           <span>: [</span>
-          <S>&apos;English&apos;</S>
-          <span>, </span>
           <S>&apos;Portuguese&apos;</S>
+          <span>, </span>
+          <S>&apos;English (C1)&apos;</S>
+          <span>, </span>
+          <S>&apos;Spanish (basic)&apos;</S>
           <span>],</span>
         </Line>
         <Line indent={2}>
@@ -96,25 +91,34 @@ export function About() {
           <C>{'/**'}</C>
         </Line>
         <Line indent={1}>
-          <C>* Full Stack Developer with 6+ years of experience, focused on</C>
+          <C>* Senior Full-Stack Developer with 6+ years of experience building</C>
         </Line>
         <Line indent={1}>
-          <C>* frontend development with React and React Native. Currently</C>
+          <C>* web and mobile products with React Native, React, Node.js,</C>
         </Line>
         <Line indent={1}>
-          <C>* Tech Lead at Medprev, driving technical decisions and mentoring</C>
+          <C>* TypeScript, and AWS. Hands-on individual contributor focused on</C>
         </Line>
         <Line indent={1}>
-          <C>* developers across mobile and web products.</C>
+          <C>* shipping scalable applications, improving performance and</C>
+        </Line>
+        <Line indent={1}>
+          <C>* reliability, and delivering iOS and Android features used by</C>
+        </Line>
+        <Line indent={1}>
+          <C>* 50k+ active users and supporting 1M+ daily requests.</C>
         </Line>
         <Line indent={1}>
           <C>*</C>
         </Line>
         <Line indent={1}>
-          <C>* Strong communicator — keeping designers, QA, and infra aligned</C>
+          <C>* Experienced with CI/CD, automated testing, Domain-Driven Design,</C>
         </Line>
         <Line indent={1}>
-          <C>* is something I genuinely enjoy and consider a core strength.</C>
+          <C>* Hexagonal Architecture, and AI-assisted development. I enjoy</C>
+        </Line>
+        <Line indent={1}>
+          <C>* collaborating with product, design, and engineering teams.</C>
         </Line>
         <Line>
           <C>{' */'}</C>
